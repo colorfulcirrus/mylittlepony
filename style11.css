@@ -1,0 +1,179 @@
+/* ===== ЗАДАНИЕ I - ПАРАМЕТРЫ СТИЛЕЙ ===== */
+
+/* 1) Универсальный селектор */
+* {
+  box-sizing: border-box;
+}
+
+/* 2) Фон с градиентом - ТРИ ЦВЕТА: серый, светло-серый, темно-серый */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(120deg, #2c3e50, #bdc3c7, #34495e);
+  margin: 0;
+}
+
+/* 3) Цвета ссылок */
+a {
+  color: #ecf0f1;  /* светлый */
+}
+
+a:visited {
+  color: #bdc3c7;  /* серый */
+}
+      
+a:hover {
+  color: #ffffff;  /* белый */
+}
+
+/* 4) Меню ссылок */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 5) Контейнер */
+.container {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -70px;
+}
+
+/* 6) Точки перехода */
+@media (min-width: 780px) {
+  .container {
+    width: 760px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 767px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* 7) Хэдер */
+.landing-page header {
+  min-height: 80px;
+  display: flex;
+}
+      
+@media (max-width: 767px) {
+  .landing-page header {
+    min-height: auto;
+    display: initial;
+  }
+}
+
+/* 8) Контейнер внутри хэдера */
+.landing-page header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+      
+@media (max-width: 767px) {
+  .landing-page header .container {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* 9) Ссылки-вкладки */
+.landing-page header .links {
+  display: flex;
+  align-items: center;
+}
+      
+@media (max-width: 900px) {
+  .landing-page header .links {
+    text-align: center;
+    gap: 20px;
+  }
+}
+
+/* 10) Цвет вкладок */
+.landing-page header .links li {
+  margin-left: 10px;
+  color: #ecf0f1;
+  cursor: pointer;
+  transition: .3s;
+}
+
+/* 11) Последняя вкладка - ГРАФИТНАЯ КНОПКА */
+@media (max-width: 900px) {
+  .landing-page header .links li {
+    margin-left: auto;
+  }
+}
+
+.landing-page header .links li:last-child {
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: #FFF;
+  background-color: #2c3e50;  /* графитный */
+}
+ 
+/* 12) Расположение контента */    
+.landing-page .content .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 140px;
+  min-height: calc(100vh - 80px);
+}
+      
+@media (max-width: 767px) {
+  .landing-page .content .container {
+    gap: 0;
+    min-height: calc(100vh - 101px);
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+}
+      
+@media (max-width: 767px) {
+  .landing-page .content .info {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
+/* 13) Заголовок */
+.landing-page .content .info h1 {
+  color: white;
+  font-size: 38px;
+}
+
+/* 14) Абзац */
+.landing-page .content .info p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 15px;
+  color: white;
+}
+
+/* 15) Кнопка внизу - ГРАФИТНАЯ */
+.landing-page .content .info button {
+  border: 0;
+  border-radius: 20px;
+  padding: 12px 30px;
+  margin-top: 30px;
+  cursor: pointer;
+  color: #FFF;
+  background-color: #2c3e50;  /* графитный */
+}
+
+/* 16) Картинка */
+.landing-page .content .image img {
+  max-width: 120%;
+  margin-top: 50px;
+}

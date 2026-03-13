@@ -1,0 +1,274 @@
+/* ========== ЗАДАНИЕ I - ОТДЕЛЬНЫЙ CSS ФАЙЛ ========== */
+
+/* 1) Универсальный селектор */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2) Фон с градиентом - серый-светло-серый */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(120deg, #2c3e50, #bdc3c7, #95a5a6);
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* 3) Цвета ссылок */
+a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:visited {
+    color: #bdc3c7;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+/* 4) Список */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 5) Контейнер */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+}
+
+/* 6) Адаптивные точки */
+@media (min-width: 780px) {
+    .container { width: 760px; }
+}
+
+@media (min-width: 992px) {
+    .container { width: 970px; }
+}
+
+@media (min-width: 1200px) {
+    .container { width: 1170px; }
+}
+
+/* 7) Шапка */
+.landing-page header {
+    min-height: 80px;
+    display: flex;
+    position: relative;
+    z-index: 10;
+}
+
+@media (max-width: 767px) {
+    .landing-page header {
+        min-height: auto;
+        display: initial;
+    }
+}
+
+/* 8) Контейнер в шапке */
+.landing-page header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+    .landing-page header .container {
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 20px;
+    }
+}
+
+/* 9) Ссылки-вкладки */
+.landing-page header .links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .landing-page header .links {
+        text-align: center;
+        gap: 20px;
+    }
+}
+
+/* 10) Пункты меню */
+.landing-page header .links li {
+    margin-left: 20px;
+    color: #ecf0f1;
+    cursor: pointer;
+    transition: .3s;
+    padding: 8px 0;
+    font-weight: 600;
+}
+
+.landing-page header .links li a {
+    color: inherit;
+}
+
+.landing-page header .links li:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* 11) Последняя вкладка - ГРАФИТНАЯ КНОПКА */
+.landing-page header .links li:last-child {
+    border-radius: 25px;
+    padding: 10px 25px;
+    color: #FFFFFF !important;
+    background-color: #2c3e50;
+    margin-left: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.landing-page header .links li:last-child:hover {
+    background-color: #34495e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.landing-page header .links li:last-child a {
+    color: #FFFFFF !important;
+}
+
+@media (max-width: 767px) {
+    .landing-page header .links li {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    .landing-page header .links li:last-child {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+/* 12) Основной контент */
+.landing-page .content .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 140px;
+    min-height: calc(100vh - 80px);
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+@media (max-width: 767px) {
+    .landing-page .content .container {
+        gap: 30px;
+        min-height: calc(100vh - 120px);
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 767px) {
+    .landing-page .content .info {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
+/* 13) Заголовок - ЧЕРНЫЙ */
+.landing-page .content .info h1 {
+    color: #2c3e50;
+    font-size: 42px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(255,255,255,0.3);
+}
+
+@media (max-width: 767px) {
+    .landing-page .content .info h1 {
+        font-size: 32px;
+    }
+}
+
+/* 14) Абзац - ЧЕРНЫЙ */
+.landing-page .content .info p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #2c3e50;
+    max-width: 500px;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.2);
+}
+
+/* 15) Кнопка внизу - ГРАФИТНАЯ */
+.landing-page .content .info button {
+    border: 0;
+    border-radius: 25px;
+    padding: 14px 35px;
+    margin-top: 30px;
+    cursor: pointer;
+    color: #FFFFFF;
+    background-color: #2c3e50;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.landing-page .content .info button:hover {
+    background-color: #34495e;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.landing-page .content .info button a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* 16) Изображение */
+.landing-page .content .image img {
+    max-width: 120%;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    margin-top: 50px;
+    border: 3px solid rgba(255,255,255,0.3);
+}
+
+@media (max-width: 767px) {
+    .landing-page .content .image img {
+        max-width: 90%;
+        margin: 20px auto 0;
+    }
+}
+
+/* Скрываем название блога */
+.blog-title, .header h1, .header .title, 
+.header, .blog-header, #header,
+header:not(.landing-page header) {
+    display: none !important;
+}
+
+body > *:not(.landing-page) {
+    display: none !important;
+}
+
+.landing-page {
+    display: block !important;
+    position: relative;
+    z-index: 1;
+}

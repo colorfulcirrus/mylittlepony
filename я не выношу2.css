@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Landing with prices</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://rawcdn.githack.com/colorfulcirrus/mylittlepony/refs/heads/main/css%20%D0%B4%D0%BB%D1%8F%20%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%B2.css">
+    
+    <style>
+        /* Дополнительные стили для переключателя */
+        .toggle-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: #ff69b4;
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        
+        .text1 {
+            display: block;
+        }
+        
+        .text2 {
+            display: none;
+        }
+        
+        .package-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .packages {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            width: 280px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        footer {
+            background: #ff69b4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .package-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div id="circular-bg"></div>
+    
+    <nav>
+        <a href="#place1">Вкладка1</a>
+        <a href="#place2">Вкладка2</a>
+        <a href="#place4">Вкладка3</a>
+    </nav>
+    
+    <h1 id="brand">Flowers</h1>
+    
+    <img src="https://raw.githubusercontent.com/colorfulcirrus/mylittlepony/refs/heads/main/dbf83cf0-4a43-4642-8624-6020c554799a-Photoroom.png" alt="Flowers">
+    
+    <h2 id="headline">
+        Тут <br/><p id="place4">Bloom with love</p>
+    </h2>
+    
+    <button><a href="#place3" style="color: white;">Buy!</a></button>
+    <br><br>
+
+    <div class="info">
+        <p id="place1">Welcome to our flower shop! We create stunning bouquets for life's most special moments. Every flower is handpicked fresh from the best growers around the world. Let us help you express your feelings with the language of flowers.</p>
+        <br>
+        <p id="place2">We deliver happiness 7 days a week. Whether you need a romantic surprise, a birthday gift, or just because — we've got the perfect bouquet for you. Fast delivery, friendly service, and flowers that always impress.</p>
+    </div>
+    
+    <div id="small-screen"></div>   
+
+    <div class="container">
+        <div class="top">
+            <h1 id="place3">Название:</h1>
+            <div class="toggle-btn">
+                <span>2 часа</span>
+                <label class="switch">
+                    <input type="checkbox" id="checbox" onclick="check()">
+                    <span class="slider round"></span>
+                </label>
+                <span>30 минут</span>
+            </div>
+        </div>
+        
+        <div class="package-container">
+            <div class="packages">
+                <h1>Стандарт</h1>
+                <h2 class="text1">&euro;79.99</h2>
+                <h2 class="text2">&euro;199.99</h2>
+                <ul class="list">
+                    <li class="first">опция 1</li>
+                    <li>опция 2</li>
+                    <li>опция 3</li>
+                    <li>опция 4</li>
+                </ul>
+                <a href="#" class="button button1">текст кнопки заказа</a>
+            </div>
+            
+            <div class="packages">
+                <h1>Эксклюзив</h1>
+                <h2 class="text1">&euro;159.99</h2>
+                <h2 class="text2">&euro;299.99</h2>
+                <ul class="list">
+                    <li class="first">опция 1</li>
+                    <li>опция 2</li>
+                    <li>опция 3</li>
+                    <li>опция 4</li>
+                </ul>
+                <a href="#" class="button button2">текст кнопки заказа</a>
+            </div>
+        </div>
+    </div>
+    
+</header> <!-- Закрывающий тег header -->
+
+<script>
+    function check() {
+        var checkBox = document.getElementById("checbox");
+        var text1 = document.getElementsByClassName("text1");
+        var text2 = document.getElementsByClassName("text2");
+
+        for (var i = 0; i < text1.length; i++) {
+            if (checkBox.checked == true) {
+                text1[i].style.display = "block";
+                text2[i].style.display = "none";
+            } else if (checkBox.checked == false) {
+                text1[i].style.display = "none";
+                text2[i].style.display = "block";
+            }
+        }
+    }
+    check();
+</script>
+
+<footer>Текст</footer> <!-- ИСПРАВЛЕНО: убраны кавычки и точка с запятой -->
+
+</body>
+</html>
